@@ -1,0 +1,41 @@
+{
+  "suggest.noselect": true,
+  "tsserver.useLocalTsdk": true,
+  "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "scss",
+    "js",
+    "jsx",
+    "ts",
+    "tsx",
+    "graphql"
+  ],
+  "eslint.autoFixOnSave": true,
+  "languageserver": {
+    "graphql": {
+      "command": "graphql-lsp",
+      "args": ["server", "-m", "stream"],
+      "filetypes": ["graphql"]
+    }
+  },
+  "cSpell.userWords": [
+    "Darkholme",
+    "Unreactive",
+    "Zelos",
+    "akinsho",
+    "ctrlp",
+    "ctrlpvim",
+    "frazrepo",
+    "jparise",
+    "neoclide",
+    "ondark",
+    "peitalin",
+    "preprod",
+    "strikethrough",
+    "testid",
+    "tomasiser",
+    "tpope",
+    "uula",
+    "yats"
+  ]
+}

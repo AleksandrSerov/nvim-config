@@ -5,10 +5,10 @@ set rnu
 " set autochdir
 set signcolumn=yes
 call plug#begin('~/.vim/plugged')
-" JS/JSX/TS
+filetype plugin indent on
 Plug 'pangloss/vim-javascript'    " JavaScript support
-Plug 'HerringtonDarkholme/yats.vim'
-Plug 'peitalin/vim-jsx-typescript'
+Plug 'HerringtonDarkholme/yats.vim' " Typescript syntax support
+Plug 'peitalin/vim-jsx-typescript' " JSX syntax support
 Plug 'jparise/vim-graphql'        " GraphQL syntax
 Plug 'tomasiser/vim-code-dark' " Theme
 Plug 'jparise/vim-graphql'        " GraphQL syntax
@@ -19,29 +19,26 @@ Plug 'ryanoasis/vim-devicons' " icons
 Plug 'nvim-tree/nvim-web-devicons' " NvimTree icons
 Plug 'nvim-lua/plenary.nvim' " dep for telescope
 Plug 'nvim-telescope/telescope.nvim' " file browser
-Plug 'BurntSushi/ripgrep'
-Plug 'nvim-telescope/telescope-file-browser.nvim'
-Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
-Plug 'lewis6991/gitsigns.nvim'
-" Plug 'frazrepo/vim-rainbow'
+Plug 'BurntSushi/ripgrep' " Search engine for telescope
+Plug 'nvim-telescope/telescope-file-browser.nvim' " File browser
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' } " Telescope dep
+Plug 'lewis6991/gitsigns.nvim' " Git changes highlighting
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'akinsho/bufferline.nvim', { 'tag': '*' }
-Plug 'nvim-tree/nvim-tree.lua'
-Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
-Plug 'tpope/vim-surround'
+Plug 'akinsho/bufferline.nvim', { 'tag': '*' } " Customize bufferline
+Plug 'nvim-tree/nvim-tree.lua' " Tree file browser
+Plug 'akinsho/toggleterm.nvim', {'tag' : '*'} " Terminal in vim
+Plug 'tpope/vim-surround' " Commands for surrounding
 call plug#end()
-filetype plugin indent on
-let g:typescript_indent_disable = 1
 
+let g:typescript_indent_disable = 1
 " Source Vim configuration file and install plugins
 nnoremap <silent><leader>1 :source ~/.config/nvim/init.vim \| :PlugInstall<CR>
 
+" CLose all buffers
 map <leader>t :%bd\|e#\|bd#<cr>
 " Setup theme
 let g:codedark_conservative=0
 let g:airline_theme = 'codedark'
-set t_Co=256
-set t_ut=
 colorscheme codedark
 
 " Setup toggleterm
@@ -196,7 +193,7 @@ nmap <leader>rn <Plug>(coc-rename)
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
-" Telescope fzf plugon
+" Telescope fzf plugin
 lua << EOF
 require('telescope').load_extension('fzf')
 EOF
@@ -218,7 +215,7 @@ EOF
 let g:prettier#autoformat = 1
 let g:prettier#autoformat_require_pragma = 1
 
-let g:airline_powerline_fonts = 1 "Включить поддержку Powerline шрифтов
-let g:Powerline_symbols='unicode' "Поддержка unicode
+let g:airline_powerline_fonts = 1 "Powerline fonts support
+let g:Powerline_symbols='unicode' "unicode support
 
 set guifont=JetBrainsMono\ Nerd\ Font\ Mono:h19

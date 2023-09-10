@@ -29,7 +29,10 @@ Plug 'nvim-tree/nvim-tree.lua' " Tree file browser
 Plug 'akinsho/toggleterm.nvim', {'tag' : '*'} " Terminal in vim
 Plug 'tpope/vim-surround' " Commands for surrounding
 call plug#end()
-
+imap jj <Esc>
+" Do this fix locally for stylelint lsp working
+" https://github.com/bmatcuk/coc-stylelintplus/issues/37#issuecomment-1418949263
+let g:coc_global_extensions = ['coc-css', 'coc-tsserver', 'coc-eslint', 'coc-prettier', 'coc-graphql', 'coc-stylelintplus', 'coc-spell-checker']
 let g:typescript_indent_disable = 1
 " Source Vim configuration file and install plugins
 nnoremap <silent><leader>1 :source ~/.config/nvim/init.vim \| :PlugInstall<CR>
